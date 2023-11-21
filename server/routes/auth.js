@@ -2,16 +2,16 @@
 const router = require('express').Router();
 
 const bcrypt = require('bcryptjs');
-const hwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 // import Models
 const userSchema = require("../models/User");
-const roomSchema = require('../models/Room');
+const chatSchema = require('../models/Chat');
 const messageSchema = require('../models/Message');
 
 // POST Create User
 router.route('/register').post(async (req, res, next) => {
-    let password = req.body.password;
+
     req.body.password = await bcrypt.hash(req.body.password, 10);
 
     console.log(req.body);

@@ -11,9 +11,9 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/users');
 
-const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./middleware/authmiddleware');
 
 const corsOptions = {
     // Connect to Frontend
@@ -23,7 +23,7 @@ const corsOptions = {
     methods: ['GET', 'POST']
 };
 
-app.use(cors(corsOption));
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json());
