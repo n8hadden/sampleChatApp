@@ -35,9 +35,9 @@ app.use('/users', authMiddleware, userRoutes);
 
 // Users
 mongoose
-    .connect(process.env.MONGO_URI)
-    .then(() => console.log("DB connected"))
-    .catch((err) => console.log('DB Connection Error' + err.message));
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("DB connected"))
+  .catch((err) => console.log('DB Connection Error' + err.message));
 
 app.post('/', authMiddleware);
 

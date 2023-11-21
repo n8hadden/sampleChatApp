@@ -1,3 +1,8 @@
+# Node modules
 server/node_modules
+
+# .env file
 server/.env
+
+# package-lock (NPM)
 server/package-lock.json
