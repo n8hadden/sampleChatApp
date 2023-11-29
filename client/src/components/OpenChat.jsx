@@ -34,7 +34,13 @@ const OpenChat = ({ openChat, user }) => {
 
     return (
         <div id="openChat">
-
+            <div className="chat-header">
+                {openChat.title}
+            </div>
+            <ChatBody openChat={openChat} user={user} socket={socket} messages={messages} />
+            <ChatFooter openChat={openChat} user={user} socket={socket} setMessages={setMessages} />
         </div>
     )
 }
+
+export default OpenChat;
