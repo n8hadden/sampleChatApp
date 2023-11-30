@@ -3,7 +3,7 @@ import axios from 'axios';
 import { baseURL } from "../util";
 
 const ChatFooter = ({ openChat, socket, user, setMessages }) => {
-    const [MessageChannel, setMessage] = useState("");
+    const [message, setMessage] = useState("");
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newMessage = {

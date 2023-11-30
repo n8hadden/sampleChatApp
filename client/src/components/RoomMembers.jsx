@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { baseURL } from '../util';
 
-const RoomMembers = ({ user, setErr, selectedUsers }) => {
-    const [usersList, setUserList] = useState([]);
+const RoomMembers = ({ user, setErr, selectedUsers, setSelectedUsers }) => {
+    const [userList, setUserList] = useState([]);
     const fetchUsers = async () => {
         axios.get(`${baseURL}/users/${user._id}/contacts`, {withCredentials: true})
             .then((res) => {
@@ -33,7 +33,7 @@ const RoomMembers = ({ user, setErr, selectedUsers }) => {
     }, []);
 
     return (
-        <div id='roomMembers'>
+        <div id="roomMembers">
             <h3>Select Your Room Members</h3>
             <ul className="contacts">
                 {userList && userList.map((contact) => {
