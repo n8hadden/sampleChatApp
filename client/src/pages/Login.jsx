@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import { baseURL } from "..util";
+import { baseURL } from "../util";
 
 const Login = ({ setUser }) => {
-    const [userForm, setUserForm] = userState({
+    const [userForm, setUserForm] = useState({
         username: "",
         password: "",
     });
@@ -39,7 +39,7 @@ const Login = ({ setUser }) => {
 
     return (
         <div className="form-wrapper">
-            <div className="conatiner">
+            <div className="container">
                 <h1>Login</h1>
                 {err && <div className="err">
                     <p>{err}</p>

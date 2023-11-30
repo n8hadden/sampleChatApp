@@ -22,7 +22,7 @@ router.route('/register').post(async (req, res, next) => {
         const payload = { userId: newUser._id, username: newUser.username };
 
         let token = jwt.sign(payload, process.env.JWT_SECRET, {
-            expresIn: "1d"
+            expiresIn: "1d"
         });
 
         res.cookie("token", token, {
@@ -31,7 +31,7 @@ router.route('/register').post(async (req, res, next) => {
         });
 
 
-        console.log(`TOKENT ${token}`);
+        console.log(`TOKEN ${token}`);
         // Cookie
 
         res.json({

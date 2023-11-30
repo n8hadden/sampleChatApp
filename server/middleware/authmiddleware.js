@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const authMiddleware = (req, res) => {
     const token = req.cookies.token;
     if (!token) {
-        return res.jso({ message: "Unauthorized" });
+        return res.json({ message: "Unauthorized" });
     }
 
     jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {

@@ -17,8 +17,9 @@ const authMiddleware = require('./middleware/authmiddleware');
 
 const corsOptions = {
     // Connect to Frontend
-    origin: ["https://mern-chat-l99i.onrender.com", "http://localhost:5173"],
-    allowoedHeaders: ["origin", "X-Requested-With", "Content-Type", "Accept"],
+    // Fix before putting on render.com
+    origin: ["http://localhost:4000", "http://localhost:5173"],
+    allowedHeaders: ["origin", "X-Requested-With", "Content-Type", "Accept"],
     credentials: true,
     methods: ['GET', 'POST']
 };
@@ -31,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use("/auth", authRoutes);
-app.use('/users', authMiddleware, userRoutes);
+app.use('/users', userRoutes);
 
 // Users
 mongoose
