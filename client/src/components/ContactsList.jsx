@@ -14,7 +14,7 @@ const ContactsList = ({ user, setOpenChat }) => {
         axios.get(`${baseURL}/users/${user._id}/contacts`, { withCredentials: true})
             .then((res) => {
                 if (res.data.users) {
-                    setUserList(res.data.user);
+                    setUserList(res.data.users);
                 }
             })
             .catch((err) => {
