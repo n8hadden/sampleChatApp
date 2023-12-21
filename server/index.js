@@ -18,7 +18,7 @@ const authMiddleware = require('./middleware/authmiddleware');
 const corsOptions = {
     // Connect to Frontend
     // Fix before putting on render.com
-    origin: ["http://localhost:4000", "http://localhost:5173"],
+    origin: ["http://localhost:4000", "http://localhost:5173", "https://chat-app-backend-l7nl.onrender.com"],
     allowedHeaders: ["origin", "X-Requested-With", "Content-Type", "Accept"],
     credentials: true,
     methods: ['GET', 'POST']
